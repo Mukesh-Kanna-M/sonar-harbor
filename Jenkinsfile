@@ -16,7 +16,7 @@ pipeline {
         SONAR_HOST_URL    = 'http://192.168.31.111:9000'
 
         // GitHub
-        GITHUB_REPO_URL   = 'https://github.com/Mukesh-Kanna-M/sonar-harbour.git'
+        GITHUB_REPO_URL   = 'https://github.com/Mukesh-Kanna-M/sonar-harbor.git'
         GITHUB_BRANCH     = 'main'
     }
 
