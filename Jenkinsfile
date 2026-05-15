@@ -12,8 +12,8 @@ pipeline {
         IMAGE_LATEST      = "${IMAGE_NAME}:latest"
 
         // SonarQube
-        SONAR_PROJECT_KEY = 'sonar-harbour'
-        SONAR_HOST_URL    = 'http://192.168.31.111:9000'
+        SONAR_PROJECT_KEY = 'sonar-harbor'
+        SONAR_HOST_URL    = 'https://192.168.31.111:9000'
 
         // GitHub
         GITHUB_REPO_URL   = 'https://github.com/Mukesh-Kanna-M/sonar-harbor.git'
