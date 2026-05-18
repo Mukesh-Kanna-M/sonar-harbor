@@ -20,15 +20,20 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
 
-                withSonarQubeEnv('SonarQube') {
+                script {
 
-                    sh '''
-                    /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner \
-                    -Dsonar.projectKey=sonar-harbor \
-                    -Dsonar.projectName=sonar-harbor \
-                    -Dsonar.sources=. \
-                    -Dsonar.sourceEncoding=UTF-8
-                    '''
+                    def scannerHome = tool 'sonar-scanner'
+
+                    withSonarQubeEnv('SonarQube') {
+
+                        sh """
+                        ${scannerHome}/bin/sonar-scanner \
+                        -Dsonar.projectKey=sonar-harbor \
+                        -Dsonar.projectName=sonar-harbor \
+                        -Dsonar.sources=. \
+                        -Dsonar.sourceEncoding=UTF-8
+                        """
+                    }
                 }
             }
         }
